@@ -32,9 +32,6 @@ jobs:
       password: Prutech123
       # Log out from the Docker registry at the end of a job
       logout: # optional, default is true
-    - uses: actions/checkout@v2
+    uses: actions/checkout@v2
     - name: Run script file
-      run: |
-         chmod +x ./public/scripts/test.sh
-         ./public/scripts/test.sh
-      shell: bash
+      run: sh ./public/scripts/test.sh
