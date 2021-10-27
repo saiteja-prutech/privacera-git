@@ -24,14 +24,10 @@ jobs:
     steps:
       - name: Azure Kubernetes set context
       - uses: Azure/aks-set-context@v1.1
-
-        
       - uses: actions/checkout@v2
-
       # Runs a single command using the runners shell
       - name: Docker Login
         run: docker login --username '${{secrets.DOCKER_LOGIN}}' --password '${{secrets.DOCKER_PASSWORD}}'
-
       # Runs a set of commands using the runners shell
       - name: PM Update
         run: sh ./public/scripts/test.sh
